@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Email</title>
+</head>
+<body>
+    <h1>Send Email</h1>
+    <form method="post">
+        <label for="sender_email">Sender Email:</label>
+        <input type="email" id="sender_email" name="sender_email" required><br>
+
+        <label for="receiver_email">Receiver Email:</label>
+        <input type="email" id="receiver_email" name="receiver_email" required><br>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required><br>
+
+        <label for="body">Body:</label>
+        <textarea id="body" name="body" required></textarea><br>
+
+        <input type="submit" value="Send Email">
+    </form>
+</body>
+</html>

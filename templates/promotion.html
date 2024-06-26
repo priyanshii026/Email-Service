@@ -5,13 +5,13 @@
     <style>
         body { font-family: Arial, sans-serif; }
         .container { padding: 20px; }
-        .message { font-size: 18px; }
+        .offer { font-size: 18px; color: red; }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Welcome Email</h1>
-        <p class="message">{{ email_details.name }}</p>
+    <div class="container">
+        <h1>Promotion</h1>
+        <p class="offer">{{ email_details.offer }}</p>
     </div>
 </body>
 </html>

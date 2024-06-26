@@ -14,6 +14,15 @@ email_details = {
     'welcome': {
         'name': 'User'
     },
+    'update': {
+        'update_info': 'You have initialised a request to update yout data. We will send you a link in 6 hours on your registered email.'
+    },
+    'newsletter': {
+        'content': 'This is a sample newsletter, especially for you.'
+    },
+    'promotion': {
+        'offer': '10% OFF ONLY FOR YOU.'
+    },
     'spotlight_monthly': {
         'videos': [
             {'video_title': 'How to Get Your Brain to Focus | Chris Bailey | TEDxManchester', 'video_thumb': 'https://masterclass.ted.com/static/4ec0a4b5c98da46bb6843cca8d33b744/ee604/TEDSpeakeronstage.png', 'video_category': 'Ted_Talk', 'video_excerpt': 'The latest research is clear: the state of our attention determines the state of our lives. So how do we harness our attention to focus deeper, get distracted less, and even become more creative? Chris Bailey, author of the recent book Hyperfocus, talks about how our ability to focus is the key to productivity, creativity, and living a meaningful life.', 'video_link': 'https://youtu.be/Hu4Yvq-g7_Y?si=AkGkICg-5yDD9PwV'},
@@ -34,6 +43,7 @@ def generate_email(email_key, email_details):
         return template.render(email_details=email_details)
     except:
         return "Template not found"
+    
 
 # Email sending function
 def send_email(email_key, email_content):
@@ -41,10 +51,13 @@ def send_email(email_key, email_content):
     msg = MIMEMultipart('alternative')
     if email_key == "welcome":
         msg['Subject'] = "Welcome Onboard!"
-    if email_key == "spotlight_monthly":
+    elif email_key == "spotlight_monthly":
         msg['Subject'] = "Spotlight Monthly"
+    else:
+        msg['Subject'] = "New Email from BigStartups."
+        
     msg['From'] = "Priyanshi Saxena"
-    msg['To'] = "mahendra@bigstartups.co"
+    msg['To'] = "priyanshi.21scse1010358@galgotiasuniversity.edu.in"
 
     part1 = MIMEText(email_content, 'html')
     msg.attach(part1)
